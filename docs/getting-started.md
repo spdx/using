@@ -331,7 +331,7 @@ implied that all [Element][Class_Element] objects present in the `@graph` (that
 is, all the objects we are writing) are implicitly added to the
 [element][Property_element] property.
 
-## A Complete Document
+## A Complete Document!
 
 At this point, we have a completed SPDX document (albeit, one that has an
 unresolved references in
@@ -351,7 +351,7 @@ other options to make a more compact document that are not covered yet, such as
 referring to a external [Agent][Class_Agent] instead of encoding it in the
 document.
 
-## Lets Add Some Software
+## Lets Add Some Software!
 
 Now that we have the basic valid document, its time to start adding some
 interesting data to it. Lets start with a fictitious software package called
