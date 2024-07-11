@@ -18,11 +18,11 @@ Identifying the license for open source software is critical for both reporting 
 * An SPDX short identifier is immutable.
 * Easy look-ups and cross-references to the SPDX License List website.
 
-If using SPDX short identifiers in individual files, it is recommended to reproduce the full license in the projects LICENSE file and indicate that SPDX short identifiers are being used to refer to it. For links to projects illustrating these scenarios, see [https://spdx.dev/ids-where](https://spdx.dev/ids-where).
+If using SPDX short identifiers in individual files, it is recommended to reproduce the full license in the projects LICENSE file and indicate that SPDX short identifiers are being used to refer to it. For links to projects illustrating these scenarios, see <https://spdx.dev/ids-where>.
 
 ## E.2 Format for SPDX-License-Identifier <a name="E.2"></a>
 
-The SPDX-License-Identifier tag declares the license the file is under and should be placed at or near the top of the file in a comment. 
+The SPDX-License-Identifier tag declares the license the file is under and should be placed at or near the top of the file in a comment.
 
 The SPDX License Identifier syntax may consist of a single license (represented by a short identifier from the [SPDX license list](https://spdx.org/licenses/)) or a compound set of licenses (represented by joining together multiple licenses using the license expression syntax).
 
@@ -62,7 +62,7 @@ SPDX-License-Identifier: GPL-2.0-or-later WITH Bison-exception-2.2
 
 Please see Annex [D](SPDX-license-expressions.md) for more examples and details of the license expression specific syntax.
 
-If you can’t express the license(s) as an expression using identifiers from the SPDX list, it is probably best to just put the text of your license header in the file (if there is a standard header), or refer to a neutral site URL where the text can be found. To request a license be added to the SPDX License List, please follow the process described here: [https://github.com/spdx/license-list-XML/blob/master/CONTRIBUTING.md](https://github.com/spdx/license-list-XML/blob/master/CONTRIBUTING.md).
+If you can’t express the license(s) as an expression using identifiers from the SPDX list, it is probably best to just put the text of your license header in the file (if there is a standard header), or refer to a neutral site URL where the text can be found. To request a license be added to the SPDX License List, please follow the process described here: <https://github.com/spdx/license-list-XML/blob/master/CONTRIBUTING.md>.
 
 Alternatively, you can use a `LicenseRef-` custom license identifier to refer to a license that is not on the SPDX License List, such as the following:
 
