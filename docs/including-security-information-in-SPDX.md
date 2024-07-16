@@ -1,4 +1,4 @@
-# Annex G: Including Security Information in a SPDX document
+# Including Security Information in a SPDX document
 
 The flexibility of SPDX 3.0 allows users to either link SBOMs to external security vulnerability data or to embed security vulnerability information in the SPDX 3.0 data format. For more details about the differences, read ["Capturing Software Vulnerability Data in SPDX 3.0"](https://spdx.dev/capturing-software-vulnerability-data-in-spdx-3-0/).
 
