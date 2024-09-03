@@ -1,4 +1,4 @@
-# Annex I: Cross referencing in SPDX 3 (Informative)
+# Cross referencing in SPDX 3
 
 This document will walk though how to refer to SPDX Elements across documents
 (e.g. cross reference).
