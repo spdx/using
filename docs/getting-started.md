@@ -1,4 +1,5 @@
 # Getting started writing SPDX 3
+
 ## (a.k.a My First SPDX File)
 
 This guide is designed to walk you through the concepts behind an SPDX
@@ -29,14 +30,17 @@ official documentation are provided where possible.
 All documents need to start somewhere, and SPDX documents are no exception.
 
 The root of all SPDX documents will be a JSON object, so start with that:
+
 ```json
 {
 ```
 
 Next, we need to identify that the document is an SPDX 3 JSON-LD document, which is done with:
+
 ```json
     "@context": "https://spdx.org/rdf/3.0.0/spdx-context.jsonld",
 ```
+
 SPDX documents are designed to be a strict subset of [JSON-LD][1], such that
 they can be parsed using either a full JSON-LD parser if you need the full
 power of [linked documents][2] or [RDF][3], or a much simpler JSON parser if
@@ -50,14 +54,13 @@ and this provided URL tells us how to decode it". The [SPDX JSON
 Schema][spdxjsonschema] will force you to put the correct value here when
 validating a document.
 
-
 Now, we need to specify the list of objects that we want to create in this
 document. JSON-LD has a special way of specifying this list using the `@graph`
 property of the root object like so:
+
 ```json
     "@graph": [
 ```
-
 
 ## Tell us about yourself
 
@@ -74,6 +77,7 @@ property named `type` that tells us what this object actually is, so here we
 say this is a [Person][Class_Person].
 
 Next, we need to name our object:
+
 ```json
 
             "spdxId": "http://spdx.org/spdxdocs/Person/JoshuaWatt-141ec767-40f2-4aad-9658-ac2703f3a7d9",
@@ -102,6 +106,7 @@ In practice, many `spdxId` values will have some sort of hash or random
 UUID-like string incorporated to make them unique.
 
 Moving on from this, we have:
+
 ```json
             "creationInfo": "_:creationinfo",
 ```
@@ -156,7 +161,6 @@ case we are specifying your email address, so we choose the value `email`. The
 second property is the [indentifier][Property_identifier] property which is the
 actual string identifier (in this case, your email address).
 
-
 We are now done with our [Person][Class_Person], so close it all out and
 prepare for the next object:
 
@@ -165,7 +169,6 @@ prepare for the next object:
             ]
         },
 ```
-
 
 ## Where did all this stuff come from?
 
@@ -181,10 +184,12 @@ This is a distinct concept from describing where the thing an
 [Element][Class_Element] _describes_ comes from, which is covered later.
 
 Lets get started:
+
 ```json
         {
             "type": "CreationInfo",
 ```
+
 Hopefully this is making sense. We are saying this object is a
 [CreationInfo][Class_CreationInfo].
 
@@ -207,7 +212,7 @@ It should be noted that [CreationInfo][Class_CreationInfo] does _not_ derive
 from [Element][Class_Element] class (like our previous example of
 [ExternalIdentifier][Class_ExternalIdentifier]), and as such the `@id` property
 is technically optional. However, since we will need to refer to this object at
-other places in the document, we must give it an identifier.  This also means
+other places in the document, we must give it an identifier. This also means
 that this object does not have a mandatory
 [creationInfo][Property_creationInfo] property (which makes sense since it
 would be a circular reference). Finally, [CreationInfo][Class_CreationInfo] is
@@ -238,7 +243,7 @@ who (or what) created the elements that are linked to this
 This property is a list of reference to any class that derives from
 [Agent][Class_Agent]. Since you are the person writing the document, put a
 single list item that is the `spdxId` of your [Person][Class_Person] element
-here to link them together.  Note that even though this is using a full URI
+here to link them together. Note that even though this is using a full URI
 instead of a blank node, this is linking in the same way as
 [creationInfo][Property_creationInfo] described above.
 
@@ -247,7 +252,6 @@ between our [Person][Class_Person].[creationInfo][Property_creationInfo]
 property and [CreationInfo][Class_CreationInfo].[createdBy][Property_createdBy]
 property. This is fine in SPDX, as objects are not required to be a Directed
 Acyclical Graph (DAG).
-
 
 Finally, we need to specify the date that any objects linking to this
 [CreationInfo][Class_CreationInfo] were created using the
@@ -260,7 +264,6 @@ Finally, we need to specify the date that any objects linking to this
 
 Use today's date and time in [ISO 8601][4] with the format:
 `"%Y-%m-%dT%H:%M:%SZ"`. The timezone should always be UTC.
-
 
 ## Describing the Document
 
@@ -362,12 +365,14 @@ to distribute software (either as binaries or source). See the documentation
 for more details.
 
 Lets define our package:
+
 ```json
         {
             "type": "software_Package",
             "spdxId": "https://spdx.org/spdxdocs/Package-d1db6e61-aebe-4b13-ae73-d0f66018dbe0",
             "creationInfo": "_:creationinfo",
 ```
+
 This should be familiar by now. Note the reuse of our previous
 [CreationInfo][Class_CreationInfo].
 
@@ -389,7 +394,7 @@ Importantly, even though this is a class defined in the `Software` profile,
 [name][Property_name] is defined in core so it _does not_ get prefixed. When
 writing objects, pay attention to which profile the _property_ is defined in,
 as that sets the prefix (the documentation should make it clear what the
-serialized name of a property is if you are unsure *TODO: It does not yet*).
+serialized name of a property is if you are unsure _TODO: It does not yet_).
 
 Next, we will define what version the `amazing-widget` package is using
 [software_packageVersion][Property_software_packageVersion], and where the user
@@ -405,7 +410,6 @@ optional):
 These are our first two examples of properties not defined in the `Core`
 profile, and as such they get the `software_` prefix.
 
-
 Now, we should define when this software was packaged using the (optional)
 [builtTime][Property_builtTime] property, so that downstream users can tell how
 old it is:
@@ -417,7 +421,6 @@ old it is:
 Note that we are back in the `Core` profile properties here (specifically,
 [builtTime][Property_builtTime] is a property of [Artifact][Class_Artifact] in
 `Core`)
-
 
 Next, we want to indicate who actually made the package we are describing. This
 is done using the (optional) [originatedBy][Property_originatedBy] array
@@ -457,7 +460,6 @@ the [verifiedUsing][Property_verifiedUsing] property, which is an array of
 Specifically, we are using the [Hash][Class_Hash] subclass of integrity method to
 indicate that the SHA-256 checksum of the package file is
 `f3f60ce8615d1cfb3f6d7d149699ab53170ce0b8f24f841fb616faa50151082d`
-
 
 ## Whats in our Package?
 
@@ -553,7 +555,7 @@ have one small problem: there is nothing that tells us that our files are
 actually contained by the package.
 
 In order to do this, we must introduce the SPDX
-[Relationship][Class_Relationship].  These are a very powerful concept in SPDX
+[Relationship][Class_Relationship]. These are a very powerful concept in SPDX
 that allows linking [Element][Class_Element]s and describing how they are
 related.
 
@@ -656,7 +658,7 @@ for the [element][Property_element] property. Instead, we need to list all the
 elements that are part of this SBOM (think of this as the line items in the
 SBOM). In our specific case, this is the [software_File][Class_software_File]s
 that part of our package, but if you had any other elements related to the
-package (e.g.  licenses, security information, etc.) those would also be
+package (e.g. licenses, security information, etc.) those would also be
 included:
 
 ```json

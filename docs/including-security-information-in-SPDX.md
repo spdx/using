@@ -3,6 +3,7 @@
 The flexibility of SPDX 3.0 allows users to either link SBOMs to external security vulnerability data or to embed security vulnerability information in the SPDX 3.0 data format. For more details about the differences, read ["Capturing Software Vulnerability Data in SPDX 3.0"](https://spdx.dev/capturing-software-vulnerability-data-in-spdx-3-0/).
 
 ## G.1 External References and External Identifiers
+
 SPDX 3.0 has the concept of an [__External Reference__](https://github.com/spdx/spdx-3-model/blob/main/model/Core/Classes/ExternalRef.md) for an Element which points to a general resource outside the scope of the SPDX-3.0 content that provides additional context or information about an Element.
 
 The specification for External Reference types has many [type options](https://github.com/spdx/spdx-3-model/blob/main/model/Core/Vocabularies/ExternalRefType.md), a large handful of which pertain specifically to security use cases:
@@ -19,7 +20,6 @@ The specification for External Reference types has many [type options](https://g
 * vulnerabilityDisclosureReport
 * vulnerabilityExploitabilityAssessment
 
-
 SPDX 3.0 also has the concept of [__External Identifier__](https://github.com/spdx/spdx-3-model/blob/main/model/Core/Classes/ExternalIdentifier.md) which should be used in cases where an identifier scheme exists and is already defined for an Element outside of SPDX-3.0.
 
 There are several External Identifier [types](https://github.com/spdx/spdx-3-model/blob/main/model/Core/Vocabularies/ExternalIdentifierType.md) that may be used in a security context:
@@ -29,7 +29,6 @@ There are several External Identifier [types](https://github.com/spdx/spdx-3-mod
 * cve
 * packageUrl
 * securityOther
-
 
 This section provides usage scenarios of how to leverage the Security External References and External Identifiers specified above to refer to external security information. Examples of how to use each category can be found in the [Security/Classes](https://github.com/spdx/spdx-3-model/tree/main/model/Security/Classes) pages. Multiple instances and types of external security information may be included within a SPDX document.
 
@@ -89,8 +88,8 @@ To reference a Common Vulnerabilities and Exposures (CVE) advisory applicable to
 To reference [CSAF](https://docs.oasis-open.org/csaf/csaf/v2.0/cs01/csaf-v2.0-cs01.html) formatted security information see below for examples.
 
 ### G.1.2.1 Linking to a CSAF VEX
-To reference a CSAF VEX document, include an external reference of type `vulnerabilityExploitabilityAssessment` on the Vulnerability Element that encapsulates the CVE described in the CSAF VEX document.
 
+To reference a CSAF VEX document, include an external reference of type `vulnerabilityExploitabilityAssessment` on the Vulnerability Element that encapsulates the CVE described in the CSAF VEX document.
 
 ```json
 {
@@ -124,6 +123,7 @@ To reference a CSAF VEX document, include an external reference of type `vulnera
 ```
 
 ### G.1.2.2 Linking to a CSAF Advisory
+
 To reference a CSAF Advisory document, include the document locator as an external reference of type `securityAdvisory` on a Package Element.
 
 ```json
@@ -142,7 +142,6 @@ To reference a CSAF Advisory document, include the document locator as an extern
   ]
 },
 ```
-
 
 ## G.1.3 Linking to CycloneDX Security Data
 
@@ -188,11 +187,9 @@ To include a reference to [Open Source Vulnerability](https://github.com/google/
 },
 ```
 
-
 ## G.1.5 Linking to an OmniBOR (formerly known as GitBOM)
 
 To identify a Package with an [OmniBOR](https://omnibor.io/) (Universal Bill Of Receipts, formerly known as GitBOM) gitoid, use an External Identifier to add gitoid to the package.
-
 
 ```json
 {
@@ -252,7 +249,6 @@ To communicate that a package is not vulnerable to a specific vulnerability it i
 ```
 
 To refer to a security disclosure feed, such as the security bulletins from [CERT-EU](https://cert.europa.eu), include an External Reference in the package Element.
-
 
 ```json
 {
@@ -332,7 +328,6 @@ Alternatively, it may also link to a landing page with patches for a variety of 
   ]
 },
 ```
-
 
 ## G.1.8 Linking to any Security Related Document
 
