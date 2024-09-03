@@ -2,7 +2,13 @@
 
 ## Satisfying NTIA Minimum Elements for an SBOM using SPDX / US Executive Order 14028
 
-US Executive Order 14028 in conjunction with the National Telecommunications and Information Administration (NTIA) outlined minimum elements for an SBOM. The minimum elements are detailed in [NTIA's Framing Software Component Transparency: Establishing a Common Software Bill of Maternials](https://www.ntia.gov/files/ntia/publications/framingsbom_20191112.pdf) and [The Minimum Elements for a SBOM](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf) documents and summarized below:
+US Executive Order 14028 in conjunction with the National Telecommunications
+and Information Administration (NTIA) outlined minimum elements for an SBOM.
+The minimum elements are detailed in
+[NTIA's Framing Software Component Transparency: Establishing a Common Software Bill of Maternials](https://www.ntia.gov/files/ntia/publications/framingsbom_20191112.pdf)
+and
+[The Minimum Elements for a SBOM](https://www.ntia.doc.gov/files/ntia/publications/sbom_minimum_elements_report.pdf)
+documents and summarized below:
 
 | SBOM Minimum Field | Description |
 | ----------- | :----------- |
@@ -30,21 +36,26 @@ The SPDX Specification contains fields able to address each of the NTIA minimum 
 
 ## BSI TR-03183 - Technical Guideline Cyber Resilience Requirements for Manufacturers and Products
 
-The German BSI is actively propagating its technical guideline in preparation for adopting and detailing the
-requirements of the [EU Cyber Resilience Act](https://www.europarl.europa.eu/doceo/document/TA-9-2024-0130_EN.html)
+The German BSI is actively propagating its technical guideline in preparation
+for adopting and detailing the requirements of the
+[EU Cyber Resilience Act](https://www.europarl.europa.eu/doceo/document/TA-9-2024-0130_EN.html)
 becoming effective in 2027.
 
-The guideline can be regarded as German equivalent of the US Executive Order 14028. Nevertheless, BSI is exploring
-various options and recommendations to further detail the content of SBOMs.
+The guideline can be regarded as German equivalent of the US Executive Order
+14028. Nevertheless, BSI is exploring various options and recommendations to
+further detail the content of SBOMs.
 
 Important elements of the guideline in the context of SPDX:
 
-* The guideline references SPDX as one of the exchange formats for SBOMs.
-* It defines levels of details as well as mandatory and optional data fields.
-* The guideline scopes the content (dependency relationships) of an SBOM (top-level, n-level, transitive, delivery item, complete).
-* Different types of SBOMs (design, source, build, analysed, deployed, runtime) are defined.
+- The guideline references SPDX as one of the exchange formats for SBOMs.
+- It defines levels of details as well as mandatory and optional data fields.
+- The guideline scopes the content (dependency relationships) of an SBOM
+  (top-level, n-level, transitive, delivery item, complete).
+- Different types of SBOMs (design, source, build, analysed, deployed, runtime)
+  are defined.
 
-The guideline (available in version 1.1) is currently being revised by the BSI. Draft versions of the future 2.0 document
-are circulated by the BSI to collect review comments.
+The guideline (available in version 1.1) is currently being revised by the BSI.
+Draft versions of the future 2.0 document are circulated by the BSI to collect
+review comments.
 
 See [BSI Technical Guideline TR-03183](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TR03183/BSI-TR-03183-2.html).
