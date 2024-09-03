@@ -1,6 +1,6 @@
-# Annex F: Using SPDX to comply with Norms, Standards and Regulation (Informative)
+# Using SPDX to comply with Norms, Standards and Regulation
 
-## F.1 Satisfying NTIA Minimum Elements for an SBOM using SPDX / US Executive Order 14028 <a name="F.1"></a>
+## Satisfying NTIA Minimum Elements for an SBOM using SPDX / US Executive Order 14028
 
 US Executive Order 14028 in conjunction with the National Telecommunications
 and Information Administration (NTIA) outlined minimum elements for an SBOM.
@@ -30,11 +30,11 @@ The SPDX Specification contains fields able to address each of the NTIA minimum 
 | Component Name | [Software/Classes/Package.name](https://spdx.github.io/spdx-spec/v3.0/model/Software/Classes/Package/) inherited from [Core/Classes/Element.name](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Element/) |
 | Version String | [Software/Classes/Package.packageVersion](https://spdx.github.io/spdx-spec/v3.0/model/Software/Classes/Package/) |
 | Component Hash | [Core/Classes/Element.verifiedUsing](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Element/) |
-| Unique Identifier | [Software/Classes/SoftwareArtifact.contentIdentifier](https://spdx.github.io/spdx-spec/v3.0/model/Software/Classes/SoftwareArtifact/) for SPDX Software Artifacts or [Software/Classes/Package.packageUrl](https://spdx.github.io/spdx-spec/v3.0/model/Software/Classes/Package/) if the packageUrl is considered to be unique,<br>or [Core/Classes/Element.externalIdentifier](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Element/) for resources outside the scope of SPDX-3.0 content </br> |
+| Unique Identifier | [Software/Classes/SoftwareArtifact.contentIdentifier](https://spdx.github.io/spdx-spec/v3.0/model/Software/Classes/SoftwareArtifact/) for SPDX Software Artifacts or [Software/Classes/Package.packageUrl](https://spdx.github.io/spdx-spec/v3.0/model/Software/Classes/Package/) if the packageUrl is considered to be unique,<br>or [Core/Classes/Element.externalIdentifier](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Element/) for resources outside the scope of SPDX-3.0 content |
 | Relationship | [Core/Classes/Relationship](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Relationship/) |
 | Timestamp | [Core/Classes/CreationInfo.created](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/CreationInfo/) |
 
-## F.2 BSI TR-03183 - Technical Guideline Cyber Resilience Requirements for Manufacturers and Products <a name="F.2"></a>
+## BSI TR-03183 - Technical Guideline Cyber Resilience Requirements for Manufacturers and Products
 
 The German BSI is actively propagating its technical guideline in preparation
 for adopting and detailing the requirements of the
