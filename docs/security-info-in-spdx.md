@@ -8,7 +8,7 @@ tags:
 
 The flexibility of SPDX 3.0 allows users to either link SBOMs to external security vulnerability data or to embed security vulnerability information in the SPDX 3.0 data format. For more details about the differences, read ["Capturing Software Vulnerability Data in SPDX 3.0"](https://spdx.dev/capturing-software-vulnerability-data-in-spdx-3-0/).
 
-## 1 External References and External Identifiers
+## 1. External References and External Identifiers
 
 SPDX 3.0 has the concept of an [__External Reference__](https://github.com/spdx/spdx-3-model/blob/main/model/Core/Classes/ExternalRef.md) for an Element which points to a general resource outside the scope of the SPDX-3.0 content that provides additional context or information about an Element.
 
