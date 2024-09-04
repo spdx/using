@@ -9,7 +9,7 @@ This work is licensed under the
 [Community Specification License 1.0](https://spdx.org/licenses/Community-Spec-1.0.html)
 (Community-Spec-1.0).
 
-!!! warning
+!!! info
 
     This is not part of the specification.
     Everything on this website is for informative purpose only.
