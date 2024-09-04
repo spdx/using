@@ -1,3 +1,9 @@
+---
+tags:
+  - cross-reference
+  - v3.0
+---
+
 # Cross referencing in SPDX 3
 
 This document will walk though how to refer to SPDX Elements across documents
@@ -7,7 +13,7 @@ If you do would like to construct the complete example documents from this
 Markdown file, use the following command:
 
 ```shell
-cat cross-reference.md | awk 'BEGIN{flag=0} /^```json/, $0=="```" { if (/^---$/){flag++} else if ($0 !~ /^```.*/ ) print $0 > "doc-" flag ".spdx.json"}'
+cat cross-ref.md | awk 'BEGIN{flag=0} /^```json/, $0=="```" { if (/^---$/){flag++} else if ($0 !~ /^```.*/ ) print $0 > "doc-" flag ".spdx.json"}'
 ```
 
 ## Linking via spdxId

@@ -1,4 +1,16 @@
-# Annex A: Differences from previous editions (Informative)
+---
+tags:
+  - v3.0
+  - v2.3
+  - v2.2.2
+  - v2.2.1
+  - v2.2
+  - v2.1
+  - v2.0
+  - v1.2
+---
+
+# Differences from previous editions (Informative)
 
 ## A.1 Differences between V3.0 and V2.3 <a name="A.1"></a>
 
