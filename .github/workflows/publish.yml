@@ -21,14 +21,14 @@ jobs:
           path: using
           fetch-depth: 0
       - name: Install pre-requisites for MkDocs
-        run: pip install -r docs/requirements.txt
+        run: pip install -r using/requirements.txt
       - name: Set Git identity
         working-directory: using
         run: |
           git config user.name ${{ env.GIT_USER_NAME }}
           git config user.email ${{ env.GIT_USER_EMAIL }}
       - name: Sync gh-pages
-        working-directory: docs
+        working-directory: using
         run: git checkout ${{ env.GH_PAGES_BRANCH }} && git pull && git checkout ${{ env.REF }}
       - name: Build docs
         working-directory: using
