@@ -8,6 +8,8 @@ copyright: Using SPDX Copyright © 2024, The Linux Foundation and its Contributo
 use_directory_urls: true
 theme:
   name: material
+  favicon: images/favicon.png
+  logo: images/spdx-logo.svg
   features:
     - content.action.edit
 plugins:
@@ -18,6 +20,9 @@ markdown_extensions:
   - def_list
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
 strict: true
 validation:
   nav:
