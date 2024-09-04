@@ -27,8 +27,8 @@ check_model() {
         "$1"
 }
 
-if [ "$(ls $THIS_DIR/../docs/examples/jsonld/*.json 2>/dev/null)" ]; then
-    for f in $THIS_DIR/../docs/examples/jsonld/*.json; do
+if [ "$(ls $THIS_DIR/../examples/jsonld/*.json 2>/dev/null)" ]; then
+    for f in $THIS_DIR/../examples/jsonld/*.json; do
         echo "Checking $f"
         check_schema $f
         check_model $f

@@ -2,11 +2,11 @@ on:
   pull_request:
     paths:
       - 'docs/*.md'
-      - 'docs/examples/**/*.json'
+      - 'examples/**/*.json'
   push:
     paths:
       - 'docs/*.md'
-      - 'docs/examples/**/*.json'
+      - 'examples/**/*.json'
 jobs:
   validate-examples:
     runs-on: ubuntu-latest
