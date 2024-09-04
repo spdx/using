@@ -9,7 +9,7 @@ use_directory_urls: true
 theme:
   name: material
   favicon: images/favicon.png
-  logo: images/spdx-logo.svg
+  logo: images/logo-white.svg
   features:
     - content.action.edit
 plugins:
