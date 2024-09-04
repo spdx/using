@@ -1,3 +1,8 @@
+---
+tags:
+  - v3.0
+---
+
 # Getting started writing SPDX 3
 
 (a.k.a My First SPDX File)

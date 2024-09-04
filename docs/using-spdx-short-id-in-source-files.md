@@ -1,3 +1,8 @@
+---
+tags:
+  - license
+---
+
 # Using SPDX License List short identifiers in source files
 
 TODO: update for SPDXv3
