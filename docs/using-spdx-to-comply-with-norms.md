@@ -1,4 +1,4 @@
-# Using SPDX to comply with Norms, Standards and Regulation
+# Using SPDX to comply with norms, standards and regulation
 
 ## Satisfying NTIA Minimum Elements for an SBOM using SPDX / US Executive Order 14028
 
