@@ -3,7 +3,7 @@ site_description: Information on how to use the System Package Data Exchange spe
 site_author: The Linux Foundation and its Contributors.
 site_url: https://spdx.github.io/using/  # set to the "root" of the site, to be combined with canonical_version
 repo_url: https://github.com/spdx/using/
-edit_uri: "edit/main/using"  # set to an empty string to disable edit links;
+edit_uri: "edit/main/docs"  # set to an empty string to disable edit links;
 copyright: Using SPDX Copyright © 2024, The Linux Foundation and its Contributors.
 use_directory_urls: true
 theme:
