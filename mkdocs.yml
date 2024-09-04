@@ -17,7 +17,8 @@ plugins:
 - social:
     cards_layout_options:
       logo: docs/assets/images/ourlogo.png
-- tags
+- tags:
+    tags_file: tags.md
 markdown_extensions:
 - admonition
 - abbr
