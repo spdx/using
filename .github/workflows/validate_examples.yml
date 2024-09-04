@@ -1,12 +1,12 @@
 on:
   pull_request:
     paths:
-      - 'docs/*.md'
-      - 'examples/**/*.json'
+      - 'docs/*.md'  # For code snippets inside a document
+      - 'examples/jsonld/*.json'
   push:
     paths:
       - 'docs/*.md'
-      - 'examples/**/*.json'
+      - 'examples/jsonld/*.json'
 jobs:
   validate-examples:
     runs-on: ubuntu-latest
