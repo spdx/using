@@ -20,16 +20,18 @@ jobs:
           ref: ${{ env.REF }}
           path: using
           fetch-depth: 0
-      - name: Install pre-requisites for MkDocs
-        run: pip install -r using/requirements.txt
+      - name: Install pre-requisites for MkDocs and Material theme
+        run: |
+          pip install -r using/requirements.txt
+          apt-get install pngquant
       - name: Set Git identity
         working-directory: using
         run: |
           git config user.name ${{ env.GIT_USER_NAME }}
           git config user.email ${{ env.GIT_USER_EMAIL }}
-      - name: Sync gh-pages
+      - name: Sync GitHub Pages
         working-directory: using
         run: git checkout ${{ env.GH_PAGES_BRANCH }} && git pull && git checkout ${{ env.REF }}
-      - name: Build docs
+      - name: Build and deploy docs
         working-directory: using
         run: mkdocs gh-deploy --clean --verbose --remote-branch ${{ env.GH_PAGES_BRANCH }}
