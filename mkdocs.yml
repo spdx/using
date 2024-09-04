@@ -1,0 +1,42 @@
+site_name: Using SPDX
+site_description: Information on how to use the System Package Data Exchange specification
+site_author: The Linux Foundation and its Contributors.
+site_url: https://spdx.github.io/using/  # set to the "root" of the site, to be combined with canonical_version
+repo_url: https://github.com/spdx/using/
+edit_uri: "edit/main/docs"  # set to an empty string to disable edit links;
+copyright: Using SPDX Copyright © 2010-2024, The Linux Foundation and its Contributors.
+use_directory_urls: true
+theme:
+  name: material
+  features:
+    - content.action.edit
+plugins:
+- search
+- pdf-export:
+    combined: true
+    media_type: print
+    enabled_if_env: ENABLE_PDF_EXPORT  # only export PDF if this is set to 1
+markdown_extensions:
+  - admonition
+  - abbr
+  - pymdownx.details
+  - pymdownx.superfences
+strict: true
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
+nav:
+- "Home": index.md
+- "Getting started": getting-started.md
+- "Cross referencing": cross-ref.md
+─ "Including security information in a SPDX document": including-security-info-in-spdx.md
+─ "Using SPDX license list short identifiers in source files": using-spdx-short-id-in-source-files.md
+─ "Using SPDX license list short identifiers in source files": using-spdx-to-comply-with-norms.md
+- "Differences from previous editions": diffs-from-previous-editions.md

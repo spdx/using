@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - main
+permissions:
+    contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: python:3
+    env:
+      REF: "main"                    # source branch/tag release
+      GH_PAGES_BRANCH: "gh-pages"    # target branch (to publish HTML to)
+      GIT_USER_NAME: "publish-github-actions"  # for gh-pages commit
+      GIT_USER_EMAIL: "publish-github-actions[bot]@users.noreply.github.com"  # for gh-pages commit
+    steps:
+      - name: Checkout content
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  #v4.1.7
+        with:
+          ref: ${{ env.REF }}
+          path: using
+          fetch-depth: 0
+      - name: Install pre-requisites for MkDocs
+        run: pip install -r docs/requirements.txt
+      - name: Set Git identity
+        working-directory: using
+        run: |
+          git config user.name ${{ env.GIT_USER_NAME }}
+          git config user.email ${{ env.GIT_USER_EMAIL }}
+      - name: Sync gh-pages
+        working-directory: docs
+        run: git checkout ${{ env.GH_PAGES_BRANCH }} && git pull && git checkout ${{ env.REF }}
+      - name: Build docs
+        working-directory: using
+        run: mkdocs gh-deploy --clean --verbose --remote-branch ${{ env.GH_PAGES_BRANCH }}
