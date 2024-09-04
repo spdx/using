@@ -16,11 +16,6 @@ plugins:
       combined: true
       media_type: print
       enabled_if_env: ENABLE_PDF_EXPORT  # only export PDF if this is set to 1
-markdown_extensions:
-  - admonition
-  - abbr
-  - pymdownx.details
-  - pymdownx.superfences
 strict: true
 validation:
   nav:
