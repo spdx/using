@@ -1,3 +1,12 @@
 # Using SPDX
 
-Copyright © 2010-2024, The Linux Foundation and its Contributors.
+Information on how to use the
+[SPDX specification](https://spdx.dev/use/specifications/).
+
+This is not part of the specification.
+
+Copyright © 2024, The Linux Foundation and its Contributors.
+
+This work is licensed under the
+[Community Specification License 1.0](https://spdx.org/licenses/Community-Spec-1.0.html)
+(Community-Spec-1.0).
