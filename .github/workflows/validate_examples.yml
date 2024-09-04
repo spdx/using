@@ -1,0 +1,23 @@
+on:
+  pull_request:
+    paths:
+      - 'docs/*.md'
+      - 'docs/examples/**/*.json'
+  push:
+    paths:
+      - 'docs/*.md'
+      - 'docs/examples/**/*.json'
+jobs:
+  validate-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  #v4.1.7
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install pyshacl==0.26.0 check-jsonschema==0.29.2
+      - name: Install dependencies
+        run: |
+          sudo apt install -y gawk  
+      - name: Check examples
+        run: |
+          ./bin/check-examples.sh
