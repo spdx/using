@@ -1,9 +1,5 @@
 # Using SPDX
 
-[![.github/workflows/validate_examples.yml](https://github.com/bact/using/actions/workflows/validate_examples.yml/badge.svg)](https://github.com/bact/using/actions/workflows/validate_examples.yml)
-[![.github/workflows/publish.yml](https://github.com/bact/using/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/bact/using/actions/workflows/publish.yml)
-[![pages-build-deployment](https://github.com/bact/using/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/bact/using/actions/workflows/pages/pages-build-deployment)
-
 Information on how to use the
 [SPDX specification](https://spdx.dev/use/specifications/).
 
