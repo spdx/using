@@ -11,11 +11,11 @@ theme:
   features:
     - content.action.edit
 plugins:
-- search
-- pdf-export:
-    combined: true
-    media_type: print
-    enabled_if_env: ENABLE_PDF_EXPORT  # only export PDF if this is set to 1
+  - search
+  - pdf-export:
+      combined: true
+      media_type: print
+      enabled_if_env: ENABLE_PDF_EXPORT  # only export PDF if this is set to 1
 markdown_extensions:
   - admonition
   - abbr
@@ -33,10 +33,10 @@ validation:
     absolute_links: warn
     unrecognized_links: warn
 nav:
-- "Home": index.md
-- "Getting started": getting-started.md
-- "Cross referencing": cross-ref.md
-─ "Including security information in a SPDX document": including-security-info-in-spdx.md
-─ "Using SPDX license list short identifiers in source files": using-spdx-short-id-in-source-files.md
-─ "Using SPDX license list short identifiers in source files": using-spdx-to-comply-with-norms.md
-- "Differences from previous editions": diffs-from-previous-editions.md
+  - "Home": index.md
+  - "Getting started": getting-started.md
+  - "Cross referencing": cross-ref.md
+  - "Including security information in a SPDX document": including-security-info-in-spdx.md
+  - "Using SPDX license list short identifiers in source files": using-spdx-short-id-in-source-files.md
+  - "Using SPDX license list short identifiers in source files": using-spdx-to-comply-with-norms.md
+  - "Differences from previous editions": diffs-from-previous-editions.md
