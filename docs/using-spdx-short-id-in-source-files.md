@@ -1,6 +1,7 @@
 ---
 tags:
   - license
+  - compliance
 ---
 
 # Using SPDX License List short identifiers in source files

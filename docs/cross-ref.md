@@ -1,6 +1,6 @@
 ---
 tags:
-  - cross-reference
+  - reference
   - v3.0
 ---
 
