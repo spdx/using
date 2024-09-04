@@ -43,3 +43,4 @@ nav:
   - "Using SPDX License List short identifiers in source files": using-spdx-short-id-in-source-files.md
   - "Using SPDX to comply with norms, standards and regulation": using-spdx-to-comply-with-norms.md
   - "Differences from previous editions": diffs-from-previous-editions.md
+  - "Browse by tags": tags.md
