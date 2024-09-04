@@ -23,7 +23,8 @@ jobs:
       - name: Install pre-requisites for MkDocs and Material theme
         run: |
           pip install -r using/requirements.txt
-          apt-get install pngquant
+          sudo apt update
+          sudo apt install pngquant
       - name: Set Git identity
         working-directory: using
         run: |
