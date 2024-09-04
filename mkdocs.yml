@@ -14,9 +14,7 @@ theme:
     - content.action.edit
 plugins:
 - search
-- social:
-    cards_layout_options:
-      logo: docs/images/logo-white.png
+- social
 - tags:
     tags_file: tags.md
 markdown_extensions:

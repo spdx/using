@@ -1,5 +1,5 @@
 # Tags
 
-Following is a list of relevant tags:
+Here are the contents of this website categorized by tags:
 
 <!-- material/tags -->
