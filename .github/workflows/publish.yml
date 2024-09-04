@@ -22,8 +22,6 @@ jobs:
           fetch-depth: 0
       - name: Install pre-requisites for MkDocs
         run: pip install -r using/requirements.txt
-      - name: Install pre-requisites for Material theme
-        run: apt install pngquant
       - name: Set Git identity
         working-directory: using
         run: |
