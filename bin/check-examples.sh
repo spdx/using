@@ -35,6 +35,8 @@ if [ "$(ls $THIS_DIR/../docs/examples/jsonld/*.json 2>/dev/null)" ]; then
     done
 fi
 
+T=$(mktemp -d)
+
 for f in $THIS_DIR/../docs/*.md; do
     if ! grep -q '^```json' $f; then
         continue
