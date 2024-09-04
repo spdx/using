@@ -13,22 +13,6 @@ RDF_FILE="https://spdx.org/rdf/3.0.0/spdx-model.ttl"
 CONTEXT_FILE="https://spdx.org/rdf/3.0.0/spdx-context.jsonld"
 SPDX_VERSION="3.0.0"
 
-for f in examples/jsonld/*.json; do
-    echo "Checking $f"
-
-    check-jsonschema \
-        -v \
-        --schemafile $SCHEMA_FILE \
-        $f
-
-    pyshacl \
-        -s $RDF_FILE \
-        -e $RDF_FILE \
-        $f
-done
-
-T=$(mktemp -d)
-
 check_schema() {
     check-jsonschema \
         -v \
@@ -43,8 +27,15 @@ check_model() {
         "$1"
 }
 
+if [ "$(ls $THIS_DIR/../docs/examples/jsonld/*.json 2>/dev/null)" ]; then
+    for f in $THIS_DIR/../docs/examples/jsonld/*.json; do
+        echo "Checking $f"
+        check_schema $f
+        check_model $f
+    done
+fi
 
-for f in $THIS_DIR/../docs/annexes/*.md; do
+for f in $THIS_DIR/../docs/*.md; do
     if ! grep -q '^```json' $f; then
         continue
     fi
