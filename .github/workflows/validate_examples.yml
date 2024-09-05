@@ -7,6 +7,7 @@ on:
     paths:
       - 'docs/*.md'
       - 'examples/jsonld/*.json'
+  workflow_dispatch: {}
 jobs:
   validate-examples:
     runs-on: ubuntu-latest
