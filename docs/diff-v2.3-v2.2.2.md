@@ -1,3 +1,7 @@
+---
+SPDX-License-Identifier: Community-Spec-1.0
+---
+
 # Differences between V2.3 and V2.2.2
 
 V2.3 has added new fields to improve the ability to capture security related

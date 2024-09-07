@@ -1,3 +1,7 @@
+---
+SPDX-License-Identifier: Community-Spec-1.0
+---
+
 # Differences from between editions
 
 - [Differences between V3.0.1 and V3.0](./diff-v3.0.1-v3.0.md)

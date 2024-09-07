@@ -1,3 +1,7 @@
+---
+SPDX-License-Identifier: Community-Spec-1.0
+---
+
 # Differences between V2.0 and V1.2
 
 - Abstraction has been applied to the underlying model with the inclusion of

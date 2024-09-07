@@ -1,3 +1,7 @@
+---
+SPDX-License-Identifier: Community-Spec-1.0
+---
+
 # Differences between V3.0 and V2.3
 
 ## SPDX meaning

@@ -1,3 +1,7 @@
+---
+SPDX-License-Identifier: Community-Spec-1.0
+---
+
 # Differences between V2.2.2 and V2.2.1
 
 V2.2.2 fixed formatting, grammatical and spelling issues found

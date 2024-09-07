@@ -1,3 +1,7 @@
+---
+SPDX-License-Identifier: Community-Spec-1.0
+---
+
 # Differences from V2.2 and V2.1
 
 - JSON, YAML, and a development version of XML have been added as supported

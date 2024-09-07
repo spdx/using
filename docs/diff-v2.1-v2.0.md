@@ -1,3 +1,6 @@
+---
+SPDX-License-Identifier: Community-Spec-1.0
+---
 
 # Differences between V2.1 and V2.0
 
