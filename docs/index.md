@@ -1,3 +1,7 @@
+---
+SPDX-License-Identifier: Community-Spec-1.0
+---
+
 # Using SPDX
 
 Information on how to use the

@@ -1,4 +1,5 @@
 ---
+SPDX-License-Identifier: Community-Spec-1.0
 tags:
   - compliance
   - v3.0

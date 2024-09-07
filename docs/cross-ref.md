@@ -1,4 +1,5 @@
 ---
+SPDX-License-Identifier: Community-Spec-1.0
 tags:
   - reference
   - v3.0
