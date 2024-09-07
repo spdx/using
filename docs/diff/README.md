@@ -2,7 +2,7 @@
 SPDX-License-Identifier: Community-Spec-1.0
 ---
 
-# Differences from between editions
+# Differences between editions
 
 - [Differences between V3.0.1 and V3.0](./diff-v3.0.1-v3.0.md)
 - [Differences between V3.0 and V2.3](./diff-v3.0-v2.3.md)
