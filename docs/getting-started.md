@@ -1,6 +1,12 @@
+---
+SPDX-License-Identifier: Community-Spec-1.0
+tags:
+  - v3.0
+---
+
 # Getting started writing SPDX 3
 
-## (a.k.a My First SPDX File)
+(a.k.a My First SPDX File)
 
 This guide is designed to walk you through the concepts behind an SPDX
 document, by walking through writing one by hand. While it is possible to write

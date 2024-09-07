@@ -1,4 +1,11 @@
-# Using SPDX to comply with Norms, Standards and Regulation
+---
+SPDX-License-Identifier: Community-Spec-1.0
+tags:
+  - compliance
+  - v3.0
+---
+
+# Using SPDX to comply with norms, standards and regulation
 
 ## Satisfying NTIA Minimum Elements for an SBOM using SPDX / US Executive Order 14028
 
