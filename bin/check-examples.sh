@@ -7,11 +7,11 @@
 
 set -e
 
-THIS_DIR=$(dirname $0)
-SCHEMA_URL="https://spdx.org/schema/3.0.0/spdx-json-schema.json"
-RDF_URL="https://spdx.org/rdf/3.0.0/spdx-model.ttl"
-CONTEXT_URL="https://spdx.org/rdf/3.0.0/spdx-context.jsonld"
-SPDX_VERSION="3.0.0"
+THIS_DIR=$(dirname "$0")
+"3.0.0"
+SCHEMA_URL="https://spdx.org/schema/${SPDX_VERSION}/spdx-json-schema.json"
+RDF_URL="https://spdx.org/rdf/${SPDX_VERSION}/spdx-model.ttl"
+CONTEXT_URL="https://spdx.org/rdf/${SPDX_VERSION}/spdx-context.jsonld"
 
 check_schema() {
     check-jsonschema \
