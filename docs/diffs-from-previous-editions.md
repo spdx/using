@@ -158,7 +158,7 @@ The following ExternalRef Types should be converted to ExternalIdentifiers:
 - swid
 - purl
 
-The following ExternalRef Types should be converted to ContentIdentifers:
+The following ExternalRef Types should be converted to ContentIdentifiers:
 
 - gitoid
 - swh
@@ -185,7 +185,7 @@ If there is a single ExternalReference of type purl without the optional Externa
 
 ##### Rationale
 
-Package URL is  a very common method of identifying software packages.  Moving this to a property makes it significantly simpler to find and correlate Package URL identifiers.
+Package URL is a very common method of identifying software packages.  Moving this to a property makes it significantly simpler to find and correlate Package URL identifiers.
 
 #### Annotation
 
@@ -193,7 +193,7 @@ Package URL is  a very common method of identifying software packages.  Moving t
 
 Annotations are now subclasses of Element, so it inherits a number of new optional properties including names, annotations, and its own relationships.
 
-Annotations are no longer a property of an Element.  It is now a standalone element with a “subject”  field which points to the Element being annotated.
+Annotations are no longer a property of an Element.  It is now a standalone element with a “subject” field which points to the Element being annotated.
 
 ##### Translating from 2.3 to 3.0
 
