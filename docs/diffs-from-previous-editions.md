@@ -133,7 +133,7 @@ The packageFileName property and packageChecksum property has been replaced by a
 
 ##### Translating from 2.3 to 3.0
 
-Create an SPDX File with the name from the packageFileName and a verifiedUsing value from the packageChecksum for a single file.  If the packageFileName is a directory, then the SPDX File is created with the directory name and is verified using the contentIdentifier property on the File and a fileKind of directory.  Create a hasDistributionArifact relationship from the SPDX Package to the SPDX File.
+Create an SPDX File with the name from the packageFileName and a verifiedUsing value from the packageChecksum for a single file.  If the packageFileName is a directory, then the SPDX File is created with the directory name and is verified using the contentIdentifier property on the File and a fileKind of directory.  Create a hasDistributionArtifact relationship from the SPDX Package to the SPDX File.
 
 ##### Rationale
 
