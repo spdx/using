@@ -309,7 +309,8 @@ Changing the snippetFromFile from a property to a relationship [to be filled in]
 
 The type of SpecVersion is changed from a simple string without constraints to a SemVer string which must follow the [Semantic Versioning format](https://semver.org/).
 
-This adds a constraint where a patch version is required.  Previous usage of the SpecVersiononly included the major and minor version.
+This adds a constraint where a patch version is required.
+Previous usage of the SpecVersion only included the major and minor version.
 
 ##### Translating from 2.3 to 3.0
 
