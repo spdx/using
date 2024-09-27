@@ -358,15 +358,15 @@ LicenseException
 
 This field has not been used.
 
-#### LicenseInfoInFiles
+#### LicenseInfoInFile
 
 ##### SPDX 2.3 Model Name
 
-licenseInfoInFiles
+licenseInfoInFile
 
 ##### Tag/Value Name
 
-LicenseInfoInFiles
+LicenseInfoInFile
 
 ##### Range / Where Used
 
@@ -374,7 +374,7 @@ Package
 
 ##### Rationale
 
-This field is redundant with the declaredLicense property in the Files contained in the Package.  It is recommended that the licenseInfoInFiles can be added as an Annotation to the Package in the format: “SPDX 2.X LicenseInfoInFiles: [expression1], [expression2]”  where the [expressions] are the string representation of the license expressions.
+This field is redundant with the declaredLicense property in the Files contained in the Package.  It is recommended that the licenseInfoInFile can be added as an Annotation to the Package in the format: “SPDX 2.X LicenseInfoInFile: [expression1], [expression2]” where the [expressions] are the string representation of the license expressions.
 
 #### FilesAnalyzed
 
