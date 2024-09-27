@@ -690,7 +690,7 @@ Custom Additions have been added in SPDX 3.0 which operate in a similar manner t
 
 ##### SPDX 2.3 Model Name
 
-ExtractedLicenseInfo
+extractedText
 
 ##### Tag/Value Name
 
