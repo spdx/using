@@ -113,17 +113,17 @@ An example conversion table from SPDX 2.3 `FileType` to SPDX 3.0 `ContentType` o
 
 | SPDX 2 File Type | SPDX 3 Software Purpose | SPDX 3 Content Type |
 |------------------|-------------------------|---------------------|
-| ARCHIVE | Archive | |
+| ARCHIVE | archive | |
 | BINARY | | application/octet-stream |
-| SOURCE | Source | |
+| SOURCE | source | |
 | TEXT | | text/plain |
-| APPLICATION | Application | |
+| APPLICATION | application | |
 | AUDIO | | audio/* |
 | IMAGE | | image/* |
 | VIDEO | | video/* |
-| DOCUMENTATION | Documentation | |
-| SPDX | | text/spdx |
-| OTHER | Other | |
+| DOCUMENTATION | documentation | |
+| SPDX | | application/spdx+json, text/spdx |
+| OTHER | other | |
 
 #### Package File Name
 
