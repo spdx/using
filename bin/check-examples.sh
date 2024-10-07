@@ -1,14 +1,14 @@
 #! /bin/bash
 #
+# SPDX-License-Identifier: MIT
+#
 # Validates SPDX example, both in separate files and inline in the
 # documentation
-#
-# SPDX-License-Identifier: MIT
 
 set -e
 
 THIS_DIR=$(dirname "$0")
-"3.0.0"
+SPDX_VERSION="3.0.0"
 SCHEMA_URL="https://spdx.org/schema/${SPDX_VERSION}/spdx-json-schema.json"
 RDF_URL="https://spdx.org/rdf/${SPDX_VERSION}/spdx-model.ttl"
 CONTEXT_URL="https://spdx.org/rdf/${SPDX_VERSION}/spdx-context.jsonld"
