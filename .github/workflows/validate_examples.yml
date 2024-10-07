@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: Copyright 2024 The SPDX Contributors
+on:
+  pull_request:
+    paths:
+      - 'docs/*.md'  # For code snippets inside a document
+      - 'examples/jsonld/*.json'
+  push:
+    paths:
+      - 'docs/*.md'
+      - 'examples/jsonld/*.json'
+  workflow_dispatch: {}
+jobs:
+  validate-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871  #v4.2.1
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install check-jsonschema==0.29.3 pyshacl==0.26.0 spdx3-validate==0.0.4
+      - name: Install dependencies
+        run: |
+          sudo apt install -y gawk  
+      - name: Check examples
+        run: |
+          ./bin/check-examples.sh
