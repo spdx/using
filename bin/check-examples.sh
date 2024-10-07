@@ -1,9 +1,9 @@
 #! /bin/bash
 #
-# SPDX-License-Identifier: MIT
-#
 # Validates SPDX example, both in separate files and inline in the
 # documentation
+#
+# SPDX-License-Identifier: MIT
 
 set -e
 
@@ -16,9 +16,10 @@ SCHEMA_URL="https://spdx.org/schema/${SPDX_VERSION}/spdx-json-schema.json"
 RDF_URL="https://spdx.org/rdf/${SPDX_VERSION}/spdx-model.ttl"
 CONTEXT_URL="https://spdx.org/rdf/${SPDX_VERSION}/spdx-context.jsonld"
 
-
 # print validation setup
-echo "Checking examples"
+echo "Checking examples in"
+echo "Snippets         : $MD_DIR"
+echo "Files            : $JSON_DIR"
 echo "SPDX version     : $SPDX_VERSION"
 echo "Schema           : $SCHEMA_URL"
 echo "Schema resolved  : $(curl -I "$SCHEMA_URL" 2>/dev/null | grep -i "location:" | awk '{print $2}')"
@@ -51,7 +52,6 @@ check_spdx() {
     echo "SPDX 3 validating (spdx3-validate): $1"
     spdx3-validate --json $1
 }
-
 
 # Check examples in JSON files
 if [ "$(ls $THIS_DIR/../$JSON_DIR/*.json 2>/dev/null)" ]; then
