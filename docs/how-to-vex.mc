@@ -27,7 +27,7 @@ To link to an external VEX document, include an external reference of type `vuln
   "@id": "urn:spdx.dev:vuln-2",
   "name": "cve-1234-5678",
   "publishedTime": "2024-01-01T16:28:45Z",
-  "externalRefs": [
+  "externalRef": [
     {
       "@type": "ExternalRef",
       "externalRefType": "vulnerabilityExploitabilityAssessment",
