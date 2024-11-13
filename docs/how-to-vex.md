@@ -14,14 +14,14 @@ VEX centers on the notion of a statement. A statement can be defined as an asser
 
 The `product` is a piece of software that can be correlated to an entry in an SBOM. `vulnerability` is the ID of a security vulnerability as understood by scanners, which can be looked up in a vulnerability tracking system. `status` is one of the impact status labels defined by VEX (See <https://www.ntia.gov/files/ntia/publications/vex_one-page_summary.pdf>).
 
-## J.1 Linking vs Embedding VEX information in SPDX
+## 1. Linking vs Embedding VEX information in SPDX
 
 SPDX 3.0 provides support to include VEX information in two ways:
 
 1) Linking to external VEX information
 2) Embed VEX metadata directly in an SPDX security document
 
-### J.1.1 Linking to VEX
+### 1.1 Linking to VEX
 
 To link to an external VEX document, include an external reference of type `vulnerabilityExploitabilityAssessment` on the Vulnerability Element that encapsulates the CVE described in the VEX document.
 
@@ -41,11 +41,11 @@ To link to an external VEX document, include an external reference of type `vuln
 }
 ```
 
-### J.1.2 Embedding VEX information in SPDX
+### 1.2 Embedding VEX information in SPDX
 
 In order to embed VEX metadata in an SPDX document, you can utilize the SPDX 3.0 Security Profile. See the following sections for examples.
 
-## J.2 Assembling a VEX Statement
+## 2. Assembling a VEX Statement
 
 A VEX statement is assembled by a triad of (at least):
 
@@ -121,7 +121,7 @@ Product B, not affected by CVE-2021-44228:
   "justificationType": "vulnerableCodeNotInExecutePath"
 ```
 
-## J.3 Changing the Status of a Vulnerability
+## 3. Changing the Status of a Vulnerability
 
 VEX is designed to communicate status of a vulnerability in a software product which is inherently dynamic and prone to change over time.
 
