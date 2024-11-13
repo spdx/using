@@ -50,7 +50,7 @@ Each ExternalDocumentRef instance will translate as follows:
   - An integrity method of “Hash” will be created with the same information as the checksum property and will be referenced using the “verifiedUsing” property on the ExternalMap entry.
 - An entry would be created in the ExternalMap for each element referenced in the current SpdxDocument that is originally specified in the referenced SpdxDocument.
   - A string identifier consisting of the DocumentRef-[idstring] (the same value as the prefix in the NamespaceMap) concatenated with a “:” and then concatenated with the local portion of the element identifier would be used for the externalSpdxId in the ExternalMap
-  - A “definingDocument” property would be specified containing a string identifier consisting of the DocumentRef-[idstring] concatenated with a “:” and then concatenated with “SPDXRef-DOCUMENT”. This is a shortcut linkage to tie the referenced element to its defining SpdxDocument for verification and location information.
+  - A “definingArtifact” property would be specified containing a string identifier consisting of the DocumentRef-[idstring] concatenated with a “:” and then concatenated with “SPDXRef-DOCUMENT”. This is a shortcut linkage to tie the referenced element to its defining SpdxDocument for verification and location information.
 
 ##### Rationale
 
@@ -64,7 +64,7 @@ The ExternalDocumentRef structure in SPDX 2.3 is based on the presumptions that 
 
 The Namespace map structure in SPDX 3.0 fully supports the namespace prefixing use case for SpdxDocuments previously covered by ExternalDocumentRef but also equally covers the same use case capability for all element types and for any number of element identifier namespaces (in SPDX 3.0 all elements within an SpdxDocument are not required to have the same namespace and can actually be any desired mix of namespaces) to support this capability required in SPDX 3.0.
 
-The ExternalMap structure in SPDX 3.0 fully supports the external element (including SpdxDocument elements) referencing use case for SpdxDocuments previously covered by ExternalDocumentRef but also equally covers the same use case capability for any elements whether they were originally defined within an SpdxDocument or not to support this capability required in SPDX 3.0. The ExternalMap structure in SPDX 3.0 provides the ability to specify verification and location details for any element, not just SpdxDocuments, if appropriate but also provides simple linkage, using the “definingDocument'' property, from element entries in the ExternalMap to SpdxDocument entries in the ExternalMap where the elements were defined within the SpdxDocument and verification of the elements can be achieved via proxy to the SpdxDocument “verifiedUsing” information (this is how the SPDX 2.3 ExternalDocumentRef structure currently works).
+The ExternalMap structure in SPDX 3.0 fully supports the external element (including SpdxDocument elements) referencing use case for SpdxDocuments previously covered by ExternalDocumentRef but also equally covers the same use case capability for any elements whether they were originally defined within an SpdxDocument or not to support this capability required in SPDX 3.0. The ExternalMap structure in SPDX 3.0 provides the ability to specify verification and location details for any element, not just SpdxDocuments, if appropriate but also provides simple linkage, using the “definingArtifact” property, from element entries in the ExternalMap to SpdxDocument entries in the ExternalMap where the elements were defined within the SpdxDocument and verification of the elements can be achieved via proxy to the SpdxDocument “verifiedUsing” information (this is how the SPDX 2.3 ExternalDocumentRef structure currently works).
 
 #### Agent
 
@@ -126,17 +126,17 @@ An example conversion table from SPDX 2.3 `FileType` to SPDX 3.0 `ContentType` o
 
 | SPDX 2 File Type | SPDX 3 Software Purpose | SPDX 3 Content Type |
 |------------------|-------------------------|---------------------|
-| ARCHIVE | Archive | |
+| ARCHIVE | archive | |
 | BINARY | | application/octet-stream |
-| SOURCE | Source | |
+| SOURCE | source | |
 | TEXT | | text/plain |
-| APPLICATION | Application | |
+| APPLICATION | application | |
 | AUDIO | | audio/* |
 | IMAGE | | image/* |
 | VIDEO | | video/* |
-| DOCUMENTATION | Documentation | |
-| SPDX | | text/spdx |
-| OTHER | Other | |
+| DOCUMENTATION | documentation | |
+| SPDX | | application/spdx+json, text/spdx |
+| OTHER | other | |
 
 #### Package File Name
 
@@ -146,7 +146,7 @@ The packageFileName property and packageChecksum property has been replaced by a
 
 ##### Translating from 2.3 to 3.0
 
-Create an SPDX File with the name from the packageFileName and a verifiedUsing value from the packageChecksum for a single file.  If the packageFileName is a directory, then the SPDX File is created with the directory name and is verified using the contentIdentifier property on the File and a fileKind of directory.  Create a hasDistributionArifact relationship from the SPDX Package to the SPDX File.
+Create an SPDX File with the name from the packageFileName and a verifiedUsing value from the packageChecksum for a single file.  If the packageFileName is a directory, then the SPDX File is created with the directory name and is verified using the contentIdentifier property on the File and a fileKind of directory.  Create a hasDistributionArtifact relationship from the SPDX Package to the SPDX File.
 
 ##### Rationale
 
@@ -171,7 +171,7 @@ The following ExternalRef Types should be converted to ExternalIdentifiers:
 - swid
 - purl
 
-The following ExternalRef Types should be converted to ContentIdentifers:
+The following ExternalRef Types should be converted to ContentIdentifiers:
 
 - gitoid
 - swh
@@ -198,7 +198,7 @@ If there is a single ExternalReference of type purl without the optional Externa
 
 ##### Rationale
 
-Package URL is  a very common method of identifying software packages.  Moving this to a property makes it significantly simpler to find and correlate Package URL identifiers.
+Package URL is a very common method of identifying software packages.  Moving this to a property makes it significantly simpler to find and correlate Package URL identifiers.
 
 #### Annotation
 
@@ -206,7 +206,7 @@ Package URL is  a very common method of identifying software packages.  Moving t
 
 Annotations are now subclasses of Element, so it inherits a number of new optional properties including names, annotations, and its own relationships.
 
-Annotations are no longer a property of an Element.  It is now a standalone element with a “subject”  field which points to the Element being annotated.
+Annotations are no longer a property of an Element.  It is now a standalone element with a “subject” field which points to the Element being annotated.
 
 ##### Translating from 2.3 to 3.0
 
@@ -322,7 +322,8 @@ Changing the snippetFromFile from a property to a relationship [to be filled in]
 
 The type of SpecVersion is changed from a simple string without constraints to a SemVer string which must follow the [Semantic Versioning format](https://semver.org/).
 
-This adds a constraint where a patch version is required.  Previous usage of the SpecVersiononly included the major and minor version.
+This adds a constraint where a patch version is required.
+Previous usage of the SpecVersion only included the major and minor version.
 
 ##### Translating from 2.3 to 3.0
 
@@ -370,15 +371,15 @@ LicenseException
 
 This field has not been used.
 
-#### LicenseInfoInFiles
+#### LicenseInfoInFile
 
 ##### SPDX 2.3 Model Name
 
-licenseInfoInFiles
+licenseInfoInFile
 
 ##### Tag/Value Name
 
-LicenseInfoInFiles
+LicenseInfoInFile
 
 ##### Range / Where Used
 
@@ -386,7 +387,7 @@ Package
 
 ##### Rationale
 
-This field is redundant with the declaredLicense property in the Files contained in the Package.  It is recommended that the licenseInfoInFiles can be added as an Annotation to the Package in the format: “SPDX 2.X LicenseInfoInFiles: [expression1], [expression2]”  where the [expressions] are the string representation of the license expressions.
+This field is redundant with the declaredLicense property in the Files contained in the Package.  It is recommended that the licenseInfoInFile can be added as an Annotation to the Package in the format: “SPDX 2.X LicenseInfoInFile: [expression1], [expression2]” where the [expressions] are the string representation of the license expressions.
 
 #### FilesAnalyzed
 
@@ -702,7 +703,7 @@ Custom Additions have been added in SPDX 3.0 which operate in a similar manner t
 
 ##### SPDX 2.3 Model Name
 
-ExtractedLicenseInfo
+extractedText
 
 ##### Tag/Value Name
 
