@@ -1,0 +1,19 @@
+on:
+  - pull_request
+  - push
+
+jobs:
+  validate-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  #v4.1.7
+      - name: Install Python dependencies
+        run: |
+          python3 -m pip install spdx3-validate==0.0.5
+      - name: Install dependencies
+        run: |
+          sudo apt install -y gawk
+
+      - name: Check examples
+        run: |
+          ./bin/check-examples.sh
