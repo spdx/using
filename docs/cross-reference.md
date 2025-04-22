@@ -193,7 +193,7 @@ containing the external spdxId, we need to write that now:
             "creationInfo": "_:creationinfo1",
             "software_fileKind": "file",
             "software_primaryPurpose": "file",
-            "software_contentType": "application/spdx+json",
+            "contentType": "application/spdx+json",
             "verifiedUsing": [{
                 "type": "Hash",
                 "algorithm": "sha256",

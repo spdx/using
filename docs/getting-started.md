@@ -38,7 +38,7 @@ The root of all SPDX documents will be a JSON object, so start with that:
 Next, we need to identify that the document is an SPDX 3 JSON-LD document, which is done with:
 
 ```json
-    "@context": "https://spdx.org/rdf/3.0.0/spdx-context.jsonld",
+    "@context": "https://spdx.org/rdf/3.0.1/spdx-context.jsonld",
 ```
 
 SPDX documents are designed to be a strict subset of [JSON-LD][1], such that
@@ -227,7 +227,7 @@ Next, we need to specify which version of the SPDX spec that elements linking
 to this [CreationInfo][Class_CreationInfo] are conforming to:
 
 ```json
-            "specVersion": "3.0.0",
+            "specVersion": "3.0.1",
 ```
 
 Now, we need to use the [createdBy][Property_createdBy] property to indicated
@@ -699,7 +699,7 @@ walk through has been instructive and you are ready to get started with SPDX!
 [2]: https://en.wikipedia.org/wiki/Linked_data
 [3]: https://www.w3.org/RDF/
 [4]: https://en.wikipedia.org/wiki/ISO_8601
-[spdxjsonschema]: https://spdx.org/schema/3.0.0/spdx-json-schema.json
+[spdxjsonschema]: https://spdx.org/schema/3.0.1/spdx-json-schema.json
 [Class_Agent]: https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Agent
 [Class_Artifact]: https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Artifact
 [Class_CreationInfo]: https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/CreationInfo
