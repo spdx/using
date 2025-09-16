@@ -265,8 +265,8 @@ The following table reflects the translation for relationship types from SPDX 2.
 | OPTIONAL_DEPENDENCY_OF | hasOptionalDependency | Y | various lifecycle scope |
 | OTHER | other | | |
 | PACKAGE_OF | packagedBy | Y | |
-| PATCH_FOR | patchedBy | Y | |
 | PATCH_APPLIED | patchedBy | Y | |
+| PATCH_FOR | patchedBy | Y | |
 | PREREQUISITE_FOR | hasPrerequisite | Y | various lifecycle scope |
 | PROVIDED_DEPENDENCY_OF | hasProvidedDependency | Y | various lifecycle scope |
 | REQUIREMENT_DESCRIPTION_FOR | hasRequirement | Y | various lifecycle scope |
