@@ -27,13 +27,13 @@ To link to an external VEX document, include an external reference of type `vuln
 
 ```json
 {
-  "@type": "Vulnerability",
+  "@type": "security_Vulnerability",
   "@id": "urn:spdx.dev:vuln-2",
   "name": "cve-1234-5678",
   "publishedTime": "2024-01-01T16:28:45Z",
   "externalRef": [
     {
-      "@type": "ExternalRef",
+      "type": "ExternalRef",
       "externalRefType": "vulnerabilityExploitabilityAssessment",
       "locator": "https://github.com/openvex/vexctl/blob/main/examples/openvex/document1.vex.json"
     }
@@ -68,8 +68,8 @@ The following example shows how you would communicate that a vulnerability is un
 
 ```json
 {
-  "@type": "VexUnderInvestigationVulnAssessmentRelationship",
-  "@id": "urn:spdx.dev:vex-underInvestigation-1",
+  "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+  "spdxId": "urn:spdx.dev:vex-underInvestigation-1",
   "relationshipType": "underInvestigationFor",
   "from": "urn:spdx.dev:vuln-cve-2020-28498",
   "to": ["urn:product-acme-application-1.3"],
@@ -83,8 +83,8 @@ To communicate that a product is affected by a vulnerability, you would instead 
 
 ```json
 {
-  "@type": "VexAffectedVulnAssessmentRelationship",
-  "@id": "urn:spdx.dev:vex-affected-1",
+  "type": "security_VexAffectedVulnAssessmentRelationship",
+  "spdxId": "urn:spdx.dev:vex-affected-1",
   "relationshipType": "affects",
   "from": "urn:spdx.dev:vuln-cve-2020-28498",
   "to": ["urn:product-acme-application-1.3"],
@@ -100,8 +100,8 @@ Product A, affected by CVE-2021-44228:
 
 ```json
 {
-  "@type": "VexAffectedVulnAssessmentRelationship",
-  "@id": "urn:spdx.dev:vex-affected-1",
+  "type": "security_VexAffectedVulnAssessmentRelationship",
+  "spdxId": "urn:spdx.dev:vex-affected-1",
   "relationshipType": "affects",
   "from": "urn:spdx.dev:vuln-cve-2021-44228",
   "to": ["urn:product-acme-application-1.3"],
@@ -117,8 +117,8 @@ Product B, not affected by CVE-2021-44228:
 
 ```json
 {
-  "@type": "VexNotAffectedVulnAssessmentRelationship",
-  "@id": "urn:spdx.dev:vex-not-affected-1",
+  "type": "security_VexNotAffectedVulnAssessmentRelationship",
+  "spdxId": "urn:spdx.dev:vex-not-affected-1",
   "relationshipType": "doesNotAffect",
   "from": "urn:spdx.dev:vuln-cve-2021-44228",
   "to": ["urn:product-acme-application-1.4"],
@@ -137,8 +137,8 @@ Because [Elements](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Elem
 
 ```json
 {
-  "@type": "VexUnderInvestigationVulnAssessmentRelationship",
-  "@id": "urn:spdx.dev:vex-underInvestigation-1",
+  "type": "security_VexUnderInvestigationVulnAssessmentRelationship",
+  "spdxId": "urn:spdx.dev:vex-underInvestigation-1",
   "relationshipType": "underInvestigationFor",
   "from": "urn:spdx.dev:vuln-cve-2020-28498",
   "to": ["urn:product-acme-application-1.3"],
@@ -147,15 +147,15 @@ Because [Elements](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Elem
   "publishedTime": "2021-03-09T11:04:53Z"
 },
 {
-  "@type": "VulnAssessmentRelationship",
-  "@id": "urn:spdx.dev:vex-update-acme-1.3",
+  "type": "security_VulnAssessmentRelationship",
+  "spdxId": "urn:spdx.dev:vex-update-acme-1.3",
   "relationshipType": "amendedBy",
   "from": "urn:spdx.dev:vex-underInvestigation-1",
   "to": ["urn:spdx.dev:vex-affected-1"],
 },
 {
-  "@type": "VexAffectedVulnAssessmentRelationship",
-  "@id": "urn:spdx.dev:vex-affected-1",
+  "type": "security_VexAffectedVulnAssessmentRelationship",
+  "spdxId": "urn:spdx.dev:vex-affected-1",
   "relationshipType": "affects",
   "from": "urn:spdx.dev:vuln-cve-2020-28498",
   "to": ["urn:product-acme-application-1.3"],
