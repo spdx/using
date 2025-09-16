@@ -67,6 +67,7 @@ VEX inherits information from the document level down to its statements. When a 
 The following example shows how you would communicate that a vulnerability is under investigation to determine whether or not it affects a software product.
 
 ```json
+{
   "@type": "VexUnderInvestigationVulnAssessmentRelationship",
   "@id": "urn:spdx.dev:vex-underInvestigation-1",
   "relationshipType": "underInvestigationFor",
@@ -75,11 +76,13 @@ The following example shows how you would communicate that a vulnerability is un
   "assessedElement": "urn:npm-elliptic-6.5.2",
   "suppliedBy": ["urn:spdx.dev:agent-jane-doe"],
   "publishedTime": "2021-03-09T11:04:53Z"
+}
 ```
 
 To communicate that a product is affected by a vulnerability, you would instead use the `VexAffectedVulnAssessmentRelationship`:
 
 ```json
+{
   "@type": "VexAffectedVulnAssessmentRelationship",
   "@id": "urn:spdx.dev:vex-affected-1",
   "relationshipType": "affects",
@@ -88,6 +91,7 @@ To communicate that a product is affected by a vulnerability, you would instead 
   "assessedElement": "urn:npm-elliptic-6.5.2",
   "suppliedBy": ["urn:spdx.dev:agent-jane-doe"],
   "publishedTime": "2021-03-09T11:04:53Z"
+}
 ```
 
 VEX relationships in SPDX will always point `to` element(s) representing the VEX *products*. A product is a logical unit representing a piece of software, typically composed of one or more software packages/libraries/components. To specify an element (typically a software package) contained *in* a product where the vulnerability was detected, the VEX relationship can optionally specify this subcomponent using the [assessedElement](https://spdx.github.io/spdx-spec/v3.0/model/Security/Properties/assessedElement/) property. Using the `assessedElement` can be helpful in situations where a particular CVE may affect software products differently. For example, perhaps you have two software products which both contain the log4j vulnerability (CVE-2021-44228) but only one of the products is exploitable by the vulnerability. The `to` product in your SPDX VEX statements and the VEX status relationships would be different but the `assessedElement` would be the same log4j package.
@@ -95,6 +99,7 @@ VEX relationships in SPDX will always point `to` element(s) representing the VEX
 Product A, affected by CVE-2021-44228:
 
 ```json
+{
   "@type": "VexAffectedVulnAssessmentRelationship",
   "@id": "urn:spdx.dev:vex-affected-1",
   "relationshipType": "affects",
@@ -103,13 +108,15 @@ Product A, affected by CVE-2021-44228:
   "assessedElement": "urn:apache-log4j-2.12",
   "suppliedBy": ["urn:spdx.dev:agent-jane-doe"],
   "publishedTime": "2021-12-10T11:04:53Z",
-  "actionStatement": "Recommend to update log4j version to 2.16.0 or later"
+  "actionStatement": "Recommend to update log4j version to 2.16.0 or later",
   "actionStatementTime": "2021-12-12T12:09:23Z"
+}
 ```
 
 Product B, not affected by CVE-2021-44228:
 
 ```json
+{
   "@type": "VexNotAffectedVulnAssessmentRelationship",
   "@id": "urn:spdx.dev:vex-not-affected-1",
   "relationshipType": "doesNotAffect",
@@ -119,15 +126,17 @@ Product B, not affected by CVE-2021-44228:
   "suppliedBy": ["urn:spdx.dev:agent-jane-doe"],
   "publishedTime": "2021-12-10T11:04:53Z",
   "justificationType": "vulnerableCodeNotInExecutePath"
+}
 ```
 
 ## 3. Changing the Status of a Vulnerability
 
 VEX is designed to communicate status of a vulnerability in a software product which is inherently dynamic and prone to change over time.
 
-Because [Elements](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Element/) in SPDX are immutable, it is best practice to issue a new VulnAssessmentRelationship of type `amendedBy` each time the VEX status of a vulnerability changes (i.e. `underInvestigationFor` --> `affects`) in addition to creating the new type of VEX status relationship. Linking the two VEX relationships this way creates a more complete graph while making it easier for tools to track the changing status of a vulnerability in a software product.  The following example shows how you would communicate that a vulnerability was under investigation before determining that the vulnerability indeed affects a product.
+Because [Elements](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Element/) in SPDX are immutable, it is best practice to issue a new VulnAssessmentRelationship of type `amendedBy` each time the VEX status of a vulnerability changes (i.e. `underInvestigationFor` --> `affects`) in addition to creating the new type of VEX status relationship. Linking the two VEX relationships this way creates a more complete graph while making it easier for tools to track the changing status of a vulnerability in a software product. The following example shows how you would communicate that a vulnerability was under investigation before determining that the vulnerability indeed affects a product.
 
 ```json
+{
   "@type": "VexUnderInvestigationVulnAssessmentRelationship",
   "@id": "urn:spdx.dev:vex-underInvestigation-1",
   "relationshipType": "underInvestigationFor",
@@ -136,13 +145,15 @@ Because [Elements](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Elem
   "assessedElement": "urn:npm-elliptic-6.5.2",
   "suppliedBy": ["urn:spdx.dev:agent-jane-doe"],
   "publishedTime": "2021-03-09T11:04:53Z"
-
+},
+{
   "@type": "VulnAssessmentRelationship",
   "@id": "urn:spdx.dev:vex-update-acme-1.3",
   "relationshipType": "amendedBy",
   "from": "urn:spdx.dev:vex-underInvestigation-1",
   "to": ["urn:spdx.dev:vex-affected-1"],
-
+},
+{
   "@type": "VexAffectedVulnAssessmentRelationship",
   "@id": "urn:spdx.dev:vex-affected-1",
   "relationshipType": "affects",
@@ -151,6 +162,7 @@ Because [Elements](https://spdx.github.io/spdx-spec/v3.0/model/Core/Classes/Elem
   "assessedElement": "urn:npm-elliptic-6.5.2",
   "suppliedBy": ["urn:spdx.dev:agent-jane-doe"],
   "publishedTime": "2021-03-15T08:10:43Z"
+}
 ```
 
 Note that it is not required to include an `amendedBy` relationship for evolving impact statements but it is considered best practice. One could also simply create a new VEX status relationship for tools/consumers to piece together using context clues like product names, ids and time stamps.
