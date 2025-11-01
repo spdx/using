@@ -48,6 +48,7 @@ nav:
 - Getting started: getting-started.md
 - Cross referencing: cross-reference.md
 - Including security information in a SPDX document: security-info-in-spdx.md
+- How to implement VEX in SPDX: how-to-vex.md
 - Using SPDX License List short identifiers in source files: license-id-in-source.md
 - Using SPDX to comply with norms, standards and regulation: comply-with-norms.md
 - Differences from previous editions: diffs-from-previous-editions.md
