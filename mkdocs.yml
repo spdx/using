@@ -28,7 +28,11 @@ markdown_extensions:
 - abbr
 - def_list
 - pymdownx.details
-- pymdownx.superfences
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
 - pymdownx.caret
 - pymdownx.mark
 - pymdownx.tilde
@@ -47,6 +51,7 @@ nav:
 - Home: index.md
 - Getting started: getting-started.md
 - Cross referencing: cross-reference.md
+- Creating an SPDX 3 extension: create-an-extension.md
 - Including security information in a SPDX document: security-info-in-spdx.md
 - Using SPDX License List short identifiers in source files: license-id-in-source.md
 - Using SPDX to comply with norms, standards and regulation: comply-with-norms.md
