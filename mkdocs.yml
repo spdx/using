@@ -45,10 +45,18 @@ validation:
     unrecognized_links: warn
 nav:
 - Home: index.md
-- Getting started: getting-started.md
-- Cross referencing: cross-reference.md
-- Including security information in a SPDX document: security-info-in-spdx.md
-- Using SPDX License List short identifiers in source files: license-id-in-source.md
-- Using SPDX to comply with norms, standards and regulation: comply-with-norms.md
-- Differences from previous editions: diffs-from-previous-editions.md
+- getting-started.md
+- cross-reference.md
+- security-info-in-spdx.md
+- license-id-in-source.md
+- comply-with-norms.md
+- Differences between versions:
+  - v1.0 - v2.0: diff/v1.2-v2.0.md
+  - v2.0 - v2.1: diff/v2.0-v2.1.md
+  - v2.1 - v2.2: diff/v2.1-v2.2.md
+  - v2.2 - v2.2.1: diff/v2.2-v2.2.1.md
+  - v2.2.1 - v2.2.2: diff/v2.2.1-v2.2.2.md
+  - v2.2.2 - v2.3: diff/v2.2.2-v2.3.md
+  - v2.3 - v3.0: diff/v2.3-v3.0.md
+  - v3.0 - v3.0.1: diff/v3.0-v3.0.1.md
 - Browse by tags: tags.md
