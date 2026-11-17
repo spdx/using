@@ -465,7 +465,9 @@ the [verifiedUsing][Property_verifiedUsing] property, which is an array of
 
 Specifically, we are using the [Hash][Class_Hash] subclass of integrity method to
 indicate that the SHA-256 checksum of the package file is
-`f3f60ce8615d1cfb3f6d7d149699ab53170ce0b8f24f841fb616faa50151082d`
+`f3f60ce8615d1cfb3f6d7d149699ab53170ce0b8f24f841fb616faa50151082d`.
+See [Selecting hash algorithms](hash-algorithm-guidance.md) for guidance on
+choosing an algorithm for cryptographic integrity verification.
 
 ## Whats in our Package?
 

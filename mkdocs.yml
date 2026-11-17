@@ -46,6 +46,7 @@ validation:
 nav:
 - Home: index.md
 - Getting started: getting-started.md
+- Selecting hash algorithms: hash-algorithm-guidance.md
 - Cross referencing: cross-reference.md
 - Including security information in a SPDX document: security-info-in-spdx.md
 - Using SPDX License List short identifiers in source files: license-id-in-source.md
