@@ -43,6 +43,8 @@ validation:
     anchors: warn
     absolute_links: warn
     unrecognized_links: warn
+not_in_nav: |
+  /diffs-from-previous-editions.md
 nav:
 - Home: index.md
 - getting-started.md
